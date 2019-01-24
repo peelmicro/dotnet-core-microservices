@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Actio.Api.Handlers;
+using Actio.Api.Repositories;
 using Actio.Common.Auth;
 using Actio.Common.Events;
+using Actio.Common.Mongo;
 using Actio.Common.RabbitMq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +36,9 @@ namespace Actio.Api
             services.AddJwt(Configuration);
 
             services.AddRabbitMq(Configuration);
+            services.AddMongoDB(Configuration);
             services.AddScoped<IEventHandler<ActivityCreated>, ActivityCreatedHandler>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
 
         }
 
@@ -50,6 +54,7 @@ namespace Actio.Api
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }
