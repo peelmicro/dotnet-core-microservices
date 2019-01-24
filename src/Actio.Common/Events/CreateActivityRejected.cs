@@ -1,19 +1,21 @@
+using System;
+
 namespace Actio.Common.Events
 {
-    public class CreateUserRejected : IRejectedEvent
+    public class CreateActivityRejected : IRejectedEvent
     {
-        public string Email { get; }
+        public Guid Id { get; }
         public string Reason { get; }
         public string Code { get; }
 
-        protected CreateUserRejected()
+        protected CreateActivityRejected()
         {
         }
 
-        public CreateUserRejected(string email,
+        public CreateActivityRejected(Guid id, 
             string reason, string code)
         {
-            Email = email;
+            Id = id;
             Reason = reason;
             Code = code;
         }
