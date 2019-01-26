@@ -6,6 +6,6 @@ namespace Actio.Services.Identity.Controllers
     public class HomeController : Controller
     {
         [HttpGet("")]
-        public IActionResult Get() => Content("Hello from Actio.Services.Identity API!");
+        public IActionResult Get() => Content("Hello from Actio.Services.Activites API!");
     }
 }

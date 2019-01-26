@@ -267,3 +267,9 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 appsettings.json
+/tests/Actio.Api.Tests/bin
+/tests/Actio.Api.Tests/obj
+/tests/Actio.Services.Activities.Tests/bin
+/tests/Actio.Services.Activities.Tests/obj
+/tests/Actio.Services.Identity.Tests/bin
+/tests/Actio.Services.Identity.Tests/obj
