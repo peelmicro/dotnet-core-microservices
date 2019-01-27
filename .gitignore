@@ -272,3 +272,4 @@ __pycache__/
 /tests/Actio.Services.Activities.Tests/obj
 /tests/Actio.Services.Identity.Tests/bin
 /tests/Actio.Services.Identity.Tests/obj
+/scripts/data
